@@ -56,7 +56,7 @@ body {
     height: 100vw;
     background-color: hsl(0, 100%, 74%);
     overflow: hidden;
-    background-image: url("images/bg-intro-desktop.png");
+    background-image: url("reg_images/bg-intro-desktop.png");
 }
 
 form{
