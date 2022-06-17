@@ -1,0 +1,60 @@
+._red{
+    background-color: rgb(252, 45, 3);
+    width: 70vw;
+    height: 30vh;
+    grid-area: _red;
+}
+
+._orange{
+    background-color: orange;
+    width: 50vw;
+    height: 30vh;
+    grid-area: _orange;
+}
+
+._green{
+    background-color: green;
+    width: 60vw;
+    height: 30vh;
+    grid-area: _green;
+}
+
+._blue1, ._blue2{
+    background-color: rgb(1, 171, 233);
+    width: 60vw;
+}
+
+._blue1{
+    grid-area: _blue1;
+        height: 12vh;
+}
+
+._blue2 {
+    grid-area: _blue2;
+        height: 18vh;
+}
+
+main{
+    
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "_red _red _orange"
+    "_green _blue1 _blue1"
+    "_green _blue2 _blue2";
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+body{
+    place-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vw;
+    background-color: rgb(246, 194, 39);
+    overflow: hidden;
+}
