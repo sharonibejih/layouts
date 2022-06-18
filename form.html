@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="shortcut icon" href="reg_images/favicon-32x32.png">
+    <link rel="stylesheet" href="forms.css">
 
 </head>
 
@@ -22,21 +23,39 @@
             </p>
         </div>
         <div class="top-right">
-            <p><b>Try it for free 7 days</b> then $20/mo. thereafter</p>
+            <p><b>Try it for free 7 days </b></p><p>then $20/mo. thereafter</p>
         </div>
         <div class="bottom-right">
             <form class="register">
-                <input type="text" id="fname" name="fname" placeholder="First Name"><br>
-                <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
-                <input type="email" id="e-mail" name="e-mail" placeholder="Email Address"><br>
-                <input type="password" id="pass" name="pass" placeholder="Password"><br><br>
-                <input type="button" value="CLAIM YOUR FREE TRAIL">
+                <div class="input-container">
+                    <input type="text" id="fname" name="fname" placeholder="First Name" required><br>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="lname" name="lname" placeholder="Last Name" required><br>
+                </div>
+                <div class="input-container">
+                    <input type="email" id="e-mail" name="e-mail" placeholder="Email Address" pattern=".+@+.+.." required><br>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="pass" name="pass" placeholder="Password" required><br><br>
+                </div>
+
+                <div>
+                    <input type="submit" id="send" value="CLAIM YOUR FREE TRAIL">
+                </div>
+                
                 <p>By clicking the button, you are agreeing to our <b><a href="#" style="text-decoration: none; color: hsl(0, 100%, 74%);">Terms and Services</a></b></p>
             </form>
+
         </div>
 
     </main>
-
+    <script>
+        document.querySelectorAll(".input-container[data-error]").forEach(inpEl => {
+            inpEl.addEventListener("input", () => inpEl.parentElement.removeAttribute("data-error"))
+        
+        });
+    </script>
 </body>
 
 </html>
