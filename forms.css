@@ -46,7 +46,8 @@ main {
         "left bottom-right";
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 80%;
+    height: auto;
     margin: auto;
     margin-top: 100px;
     /* overflow: hidden; */
@@ -58,9 +59,9 @@ body {
     place-items: center;
     justify-content: center;
     display: flex;
-    height: 100vw;
+    /* height: 100vw; */
     background-color: hsl(0, 100%, 74%);
-    /* overflow: hidden; */
+    overflow: hidden;
     background-image: url("reg_images/bg-intro-desktop.png");
     font-size: 16px;
 }
@@ -73,17 +74,6 @@ form {
 
 }
 
-  /* form {
-      padding: 0.5em;
-      border-radius: 10px;
-      width: 80vw;
-  }
-
-  input {
-      width: 70vw;
-      margin: auto;
-      display: block;
-  } */
 
 #fname {
       margin-top: 15px;
@@ -127,27 +117,6 @@ input[type=submit] {
     color: white;
 }
 
-/* input[type=text]:invalid, #e-mail:invalid {
-    border:1.5 solid hsl(0, 100%, 74%);
-    background: url(./reg_images/icon-error.svg)no-repeat scroll 370px 7px;
-    padding-right: auto;
-    visibility: hidden;
-} */
-
-/* .input-container[data-error] .input{
-    border-color: brown;
-    color: red;
-    background: white;
-} */
-
-/* .input-container[data-error]::after{
-    content: attr(data-error);
-    font-size: 0.85em;
-    color: red;
-    display: block;
-    margin:10px 0;
-    visibility: hidden;
-} */
 
 form p {
     font-weight: 400;
@@ -163,22 +132,26 @@ form:focus {
 }
 
 
-/* @media screen and (max-width: 375px) {
-    main {
-        grid-auto-flow: column;
-    }
-
-} */
-
 @media only screen and (max-width: 900px) {
-  main {
+  
+    .left{
+        padding: 1em;
+    }
+    body{
+        font-size: 12px;
+        overflow-y: scroll;
+
+    }
+  
+    main {
     grid-auto-flow: column;
     grid-template-areas:
       "left"
       "top-right"
       "bottom-right";
-    margin-top: 50px;
-    width: 100%;
+    margin-top: 10px;
+    width: 70%;
+    height: 100%;
     justify-content: center;
     place-items: center;
   }
@@ -188,6 +161,7 @@ form:focus {
     font-size: 25px;
   }
 
+
   .top-right p {
     display: block;
     padding: auto;
@@ -195,15 +169,17 @@ form:focus {
   }
   .top-right {
     width: 80vw;
-    
-  }
+    padding: 0.1em;
+    margin-top: 0px;
+}
+
 
   .left, form p{
       text-align: center;
   }
 
   form{
-    padding: 0.5em;
+    padding: 0.1em;
     border-radius: 10px;
     width: 80vw;
             margin: auto;
@@ -225,37 +201,38 @@ form:focus {
   }
 }
 
-
-/* @media screen and (max-width: 1440px) {
-    main {
-            display: grid;
-            gap: 10px;
-            grid-template-areas:
-                "left top-right"
-                "left bottom-right";
-            width: 70%;
-            margin: auto;
-            margin-top: 100px;
-            overflow: hidden;
-            font-family: "Poppins", sans-serif;
-        }
-
-         form {
-             padding: 0.5em;
-             border-radius: 10px;
-             width: 80vw;
-         }
-    
-         input {
-             width: 70vw;
-             margin: auto;
-             display: block;
-         }
-
-.left {
-    grid-area: left;
-    padding: 1px;
-    color: white;
+.input{
+    font-weight: 600;
 }
 
-} */
+.input:invalid:focus {
+    background: url(./reg_images/icon-error.svg) no-repeat 96%center white;
+    outline: 2px solid hsl(0, 100%, 74%);
+    border-radius: 5px;
+}
+
+.input:required:focus~ .error-message {
+    display: block;
+    color: hsl(0, 100%, 74%);
+    text-align: right;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.error-message {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.input:valid {
+    outline: 2px solid silver;
+}
+
+.input:required {
+    outline: 2px solid transparent;
+}
+
+input[type=email]:invalid:focus::-webkit-input-placeholder {
+    color: hsl(0, 100%, 74%)
+}
+

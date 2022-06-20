@@ -18,30 +18,39 @@
         <div class="left">
             <h1>Learn to code by <br>
                 watching others</h1>
-            <p>See how experienced developers solve problems in real-time. <br>
+            <p>See how experienced developers solve problems in real-time.
                 Watching scripted tutorials is great, but understanding how developers think is invaluable.
             </p>
         </div>
         <div class="top-right">
             <p><b>Try it for free 7 days </b></p><p>then $20/mo. thereafter</p>
         </div>
+        
+        <form class="register">
         <div class="bottom-right">
-            <form class="register">
+
                 <div class="input-container">
-                    <input type="text" id="fname" name="fname" placeholder="First Name" required><br>
+                    <input type="text" id="fname" name="fname" class="input" placeholder="First Name" required>
+                    <div class="error-message"><small>First Name cannot be blank</small></div><br>
                 </div>
+
                 <div class="input-container">
-                    <input type="text" id="lname" name="lname" placeholder="Last Name" required><br>
+                    <input type="text" id="lname" name="lname" class="input" placeholder="Last Name" required>
+                    <div class="error-message"><small>Name cannot be blank</small></div><br>
                 </div>
+
                 <div class="input-container">
-                    <input type="email" id="e-mail" name="e-mail" placeholder="Email Address" pattern=".+@+.+.." required><br>
+                    <input type="email" id="e-mail" name="e-mail" class="input" placeholder="email@example/com" pattern=".+@+.+.." required>
+                    <div class="error-message"><small>Looks like this is not an email</small></div><br>
                 </div>
+
                 <div class="input-container">
-                    <input type="password" id="pass" name="pass" placeholder="Password" required><br><br>
+                    <input type="password" id="pass" name="pass" class="input" placeholder="Password" required>
+                    <div class="error-message"><small>Password cannot be blank</small></div><br><br>
                 </div>
 
                 <div>
-                    <input type="submit" id="send" value="CLAIM YOUR FREE TRAIL">
+                    <input type="submit" id="send" value="CLAIM YOUR FREE TRAIL" id="sup">
                 </div>
                 
                 <p>By clicking the button, you are agreeing to our <b><a href="#" style="text-decoration: none; color: hsl(0, 100%, 74%);">Terms and Services</a></b></p>
@@ -50,12 +59,6 @@
         </div>
 
     </main>
-    <script>
-        document.querySelectorAll(".input-container[data-error]").forEach(inpEl => {
-            inpEl.addEventListener("input", () => inpEl.parentElement.removeAttribute("data-error"))
-        
-        });
-    </script>
 </body>
 
 </html>
